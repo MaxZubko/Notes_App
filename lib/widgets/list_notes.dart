@@ -43,8 +43,10 @@ class _ListNoteWidgetState extends State<ListNoteWidget>
           child: ListView.builder(
               itemCount: widget.snapshot.data?.docs.length,
               itemBuilder: (context, index) {
+                final reversedList =
+                    widget.snapshot.data!.docs.reversed.toList();
                 QueryDocumentSnapshot<Object?> documentSnapshot =
-                    widget.snapshot.data!.docs[index];
+                    reversedList[index];
                 return Dismissible(
                     key: Key(documentSnapshot.id),
                     direction: DismissDirection.endToStart,

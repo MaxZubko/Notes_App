@@ -19,7 +19,7 @@ class AddAndEditNotePage extends StatelessWidget {
   final _headerController = TextEditingController();
   final _titleController = TextEditingController();
   String? formattedDate =
-      DateFormat('kk:mm yyy-MM-dd').format(DateTime.now().toLocal());
+      DateFormat('kk:mm:ss yyy-MM-dd').format(DateTime.now().toLocal());
 
   bool isShowDialog = false;
 
