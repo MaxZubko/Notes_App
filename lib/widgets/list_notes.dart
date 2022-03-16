@@ -45,15 +45,11 @@ class _ListNoteWidgetState extends State<ListNoteWidget>
               itemBuilder: (context, index) {
                 QueryDocumentSnapshot<Object?> documentSnapshot =
                     widget.snapshot.data!.docs[index];
-
-                // documentSnapshot[index]
-                //     .sort((a, b) => a['date'].compareTo(b['date']));
                 return Dismissible(
                     key: Key(documentSnapshot.id),
                     direction: DismissDirection.endToStart,
                     onDismissed: (direction) {
                       cubit.deleteNote(documentSnapshot.id);
-                      // Database().deleteNote(documentSnapshot.id);
                       SnackBarWidget().showSnackBarDelete(context);
                     },
                     background: Container(

@@ -13,9 +13,9 @@ class NoteCubit extends Cubit<NoteState> {
 
   static NoteCubit get(context) => BlocProvider.of(context);
 
-  CollectionReference<Object?> getNotes() {
+  Query<Map<String, dynamic>> getNotes() {
     try {
-      final CollectionReference<Object?> notes =
+      final Query<Map<String, dynamic>> notes =
           _firestoreRepo.getMainCollection();
       // emit(state.copyWith(notes: notes));
       emit(NoteLoadedState(notes));
@@ -39,7 +39,7 @@ class NoteCubit extends Cubit<NoteState> {
     String? date,
     String? id,
   ) async {
-    await _firestoreRepo.updateNote(name, title, date, id);
+    await _firestoreRepo.udateNote(name, title, date, id);
   }
 
   Future<void> deleteNote(String id) async {

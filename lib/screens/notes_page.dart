@@ -37,7 +37,6 @@ class _NotesPage extends State<NotesPage> {
           ],
         ),
         body: StreamBuilder<QuerySnapshot>(
-          // stream: Database().getMainCollection().snapshots(),
           stream: cubit.getNotes().snapshots(),
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

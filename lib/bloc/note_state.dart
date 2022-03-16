@@ -23,7 +23,7 @@ class NoteInitial extends NoteState {}
 class NoteLoadingstate extends NoteState {}
 
 class NoteLoadedState extends NoteState {
-  final CollectionReference<Object?>? notes;
+  final Query<Map<String, dynamic>> notes;
 
   const NoteLoadedState(this.notes);
 }
